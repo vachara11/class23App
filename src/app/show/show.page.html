@@ -1,0 +1,20 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="perpul">
+    <ion-buttons slot="start">
+      <ion-back-button default-href="#" color="light"></ion-back-button>
+    </ion-buttons>
+    <ion-title color="light">แสดงข้อมูลนักเรียน ปวช.2/3</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+
+  <ion-item *ngFor="let mb of member">
+    <ion-avatar>
+      <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+    </ion-avatar> &nbsp; &nbsp; &nbsp;
+    <ion-label>{{ mb.id_stu }} {{ mb.name }} &nbsp; &nbsp; &nbsp; {{ mb.nname }}</ion-label>
+    <ion-button color="warning" (click)="edit(mb)">แก้ไข</ion-button>
+    <ion-button color="danger" (click)="delMem(mb.id)">ลบ</ion-button>
+  </ion-item>
+</ion-content>
